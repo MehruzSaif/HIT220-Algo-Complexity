@@ -28,7 +28,7 @@ def arrange_task_collection_by_importance():
                 task_collection[inner], task_collection[inner + 1] = task_collection[inner + 1], task_collection[inner]
     print("Task_cotask_collection arranged by importance.")
 
-# Function to find the task with the highest
+# Function to find the task with the highest priority
 def locate_top_priority_task():
     if task_collection:
         print(f"The top priority task is: Priority: {task_collection[0][0]}, Due Date: {task_collection[0][1]}")
@@ -40,6 +40,8 @@ def eliminate_task_by_priority(task_priority):
     for task in task_collection:
         if task[0] == task_priority:
             task_collection.remove(task)
+            return
+        
             print(f"Task with priority {task_priority} removed!")
 
 while True:
